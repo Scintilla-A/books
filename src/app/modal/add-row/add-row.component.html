@@ -1,0 +1,55 @@
+<h1>Add Fields to Row</h1>
+<form [formGroup]="logForm">
+    <div fxLayout="column" fxFlex.gt-md="33" fxFlex.lt-lg="29" fxFlex.lt-md="100">
+        <div>
+            <label for="title" class="input-label-text gap">
+                <span>{{ 'Title' }}</span></label>
+            <mat-form-field>
+                <input required matInput type="text" formControlName="title" id="title">
+
+            </mat-form-field>
+            <p>
+                <span class='error-message' *ngIf="submitted && logForm.get('title')?.value === ''">Length is required</span>
+            </p>
+        </div>
+    </div>
+
+    <div fxLayout="column" fxFlex.gt-md="33" fxFlex.lt-lg="29" fxFlex.lt-md="100">
+        <div>
+            <label for="year" class="input-label-text gap">
+                <span>{{ 'Year' }}</span></label>
+            <mat-form-field pl-5>
+                <input required matInput type="number" formControlName="year" id="year">
+
+            </mat-form-field>
+            <p>
+                <span class='error-message' *ngIf="submitted && logForm.get('year')?.value === ''">Length is required</span>
+            </p>
+        </div>
+    </div>
+
+    <div fxLayout="column" fxFlex.gt-md="33" fxFlex.lt-lg="29" fxFlex.lt-md="100">
+        <div>
+            <label for="author_name" class="input-label-text gap">
+                <span>{{ 'Author' }}</span></label>
+            <mat-form-field pl-5>
+                <input required matInput type="text" formControlName="author_name" id="author_name">
+
+            </mat-form-field>
+            <p>
+                <span class='error-message' *ngIf="submitted && logForm.get('author_name')?.value === ''">Length is required</span>
+            </p>
+        </div>
+    </div>
+  <div fxLayout="row">
+    <button mat-raised-button type="button" color="primary" (click)="add(logForm.value)">
+        <span class="pl-5">
+            {{ 'ADD' }}</span>
+    </button> {{'|'}}
+
+    <button mat-raised-button type="button" color="primary" (click)="yes()">
+        <span class="pr-5">
+            {{ 'Close' }}</span>
+    </button>
+  </div>
+    </form>

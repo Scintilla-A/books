@@ -1,0 +1,71 @@
+<h1>Library Management</h1>
+<!-- <button (click)='addList()'>Add List</button>
+<button (click)='deleteList()'>Delete List</button>
+<div>
+  <table>
+  <thead>
+    <tr *ngFor='let th of thList'>
+     <th >{{ th.title }}</th>
+     <th >{{ th.year }}</th>
+     <th >{{ th.author_name }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let bl of bookList'>
+      <td>{{bl.title}}</td>
+      <td>{{bl.year}}</td>
+      <td>{{bl.author_name}}<button (click)='deleteRow($event)'>Delete</button></td>
+    </tr>
+  </tbody>
+  
+</table>
+</div> -->
+
+<div fxLayout="row">
+  <button mat-raised-button color="accent" (click) = "addList($event)">
+    <span class="pr-10">Add List</span>
+  </button> {{'|'}}
+  <button mat-raised-button color="accent" (click) = "deleteList($event)">
+    <span class="pl-10">Delete List</span>
+  </button> {{'|'}}
+  <button mat-raised-button color="accent" (click) = "openModal($event)">
+    <span class="pl-10">Add Row</span>    
+  </button>
+</div>
+<br>
+<br>
+
+<div fxLayout="row">
+  <div fxLayout="column" fxFlex="100">
+    
+    <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="book_Title">
+        <mat-header-cell *matHeaderCellDef>Book Title</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <span><strong>{{ row.title }}</strong></span>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Year</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <span><strong>{{ row.year }}</strong></span>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="author_Name">
+        <mat-header-cell *matHeaderCellDef>Author Name</mat-header-cell>
+        <mat-cell *matCellDef="let row; let j = index;">
+          <span><strong>{{ row.author_name }}</strong></span>   
+          <div class="action-btns">
+            <span><a title="Delete">
+              <button mat-button
+              (click)="deleteRow(j, row)"><mat-icon aria-hidden="false" class="red-icon" style="padding-bottom: 2px;">X</mat-icon>
+            </button></a>
+          </span>   
+          </div>    
+        </mat-cell>
+      </ng-container>     
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row class="table-row-custom" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    </div>
+    </div>

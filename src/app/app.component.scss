@@ -1,0 +1,33 @@
+.mat-column-book_Title {
+    flex: 0 0 33% !important;
+    width: 33% !important;
+  }
+  .mat-column-year {
+    flex: 0 0 33% !important;
+    width: 33% !important;
+  }
+  .mat-column-author_Name {
+    flex: 0 0 33% !important;
+    width: 33% !important;
+  }
+  .icon-delete {
+    display: none;
+  }
+  
+  .mat-cell:hover{
+    .icon-delete{
+      display: block;
+    }
+  }
+  .action-btns {
+    .mat-button-base:hover,
+    .mat-button-base:focus {
+      box-shadow: 0 2px 10px 0 rgb(0 0 0 / 50%) !important;
+    }
+  }
+  .red-icon {
+    color: #c60d0f;
+  }
+  .red-icon svg {
+    fill: #c60d0f;
+  }
