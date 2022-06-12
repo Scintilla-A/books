@@ -31,7 +31,7 @@ export class StoreService {
                     val = this.storeFolder.global.objects[i];
                 }
             });
-            
+
         }
         return val;
     }

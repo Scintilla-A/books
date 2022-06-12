@@ -10,7 +10,7 @@ export function Update(state = initialState, action: any): any {
             const pageArr = [];
             for (let i = 0; i < state.objects.length; i++) {
                 Object.keys(state.objects[i]).find((key) => {
-                    if (key !== 'key' && parseInt(key,0) !== action.payload.id) {
+                    if (key !== 'key' && parseInt(key, 0) !== action.payload.id) {
                         pageArr.push({ [key]: state.objects[i][key] });
                     }
                 });

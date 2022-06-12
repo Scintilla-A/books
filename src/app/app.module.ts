@@ -10,7 +10,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from '../shared/store/update';
 import { metaReducers } from '../shared/store/metareducer';
-import {  MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AddRowComponent } from './modal/add-row/add-row.component';
 
 @NgModule({
@@ -26,9 +26,9 @@ import { AddRowComponent } from './modal/add-row/add-row.component';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-   
+
     StoreModule.forRoot(reducers, { metaReducers }),
-  
+
   ],
   exports: [MaterialModule],
   providers: [{
